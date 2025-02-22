@@ -1,0 +1,16 @@
+name: Test
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  publish-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Git Private Repo
+        run: |
+          git config --global url."https://github.com/Netcracker/qubership-nosqldb-operator-core.git".insteadOf "https://github.com/"	
+      - name: Analyzes Go source code
+        run: go vet ./...
