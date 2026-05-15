@@ -69,7 +69,7 @@ func WithMongo(t *testing.T) testcontainers.Container {
 	}
 	ctx := context.Background()
 	req := testcontainers.ContainerRequest{
-		Image:        "test",
+		Image:        "ghcr.io/netcracker/docker-mongo-7.0.31:main",
 		ExposedPorts: []string{"27017/tcp"},
 		WaitingFor:   wait.ForExposedPort(),
 	}
