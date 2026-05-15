@@ -69,7 +69,7 @@ func WithMongo(t *testing.T) testcontainers.Container {
 	}
 	ctx := context.Background()
 	req := testcontainers.ContainerRequest{
-		Image:        "artifactorycn.netcracker.com:17064/mongo:7.0.5",
+		Image:        "test",
 		ExposedPorts: []string{"27017/tcp"},
 		WaitingFor:   wait.ForExposedPort(),
 	}
